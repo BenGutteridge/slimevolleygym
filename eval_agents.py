@@ -31,7 +31,7 @@ from slimevolleygym.mlp import makeSlimePolicy, makeSlimePolicyLite # simple pre
 from slimevolleygym import BaselinePolicy
 from time import sleep
 
-#import cv2
+import cv2
 
 np.set_printoptions(threshold=20, precision=4, suppress=True, linewidth=200)
 
@@ -75,13 +75,13 @@ def rollout(env, policy0, policy1, render_mode=False):
     total_reward += reward
 
     if render_mode:
-      env.render()
-      """ # used to render stuff to a gif later.
+      # env.render()
+      # used to render stuff to a gif later.
       img = env.render("rgb_array")
       filename = os.path.join("gif","daytime",str(count).zfill(8)+".png")
       cv2.imwrite(filename, cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
       count += 1
-      """
+      
       sleep(0.01)
 
   return total_reward
