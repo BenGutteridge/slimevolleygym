@@ -79,7 +79,8 @@ def rollout(env, policy0, policy1, render_mode=False):
       # used to render stuff to a gif later.
       img = env.render("rgb_array")
       filename = os.path.join("gif","daytime",str(count).zfill(8)+".png")
-      cv2.imwrite(filename, cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
+      saved = cv2.imwrite(filename, cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
+      print('saved: ', saved)
       count += 1
       
       sleep(0.01)
