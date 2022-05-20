@@ -60,7 +60,7 @@ def rollout(env, policy0, policy1, render_mode=False):
 
   done = False
   total_reward = 0
-  #count = 0
+  count = 0
 
   while not done:
 
